@@ -42,6 +42,7 @@ return packer.startup(function(use)
 	use("wakatime/vim-wakatime")
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 	use("moll/vim-bbye")
+	use("kaputi/e-kaput.nvim")
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
 

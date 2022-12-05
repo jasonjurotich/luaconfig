@@ -16,6 +16,35 @@ if not typescript_setup then
 	return
 end
 
+local ekaput_setup, ekaput = pcall(require, "e-kaput")
+if not ekaput_setup then
+	return
+end
+
+-- https://neovim.io/doc/user/diagnostic.html
+vim.diagnostic.config({
+	virtual_text = false,
+	signs = true,
+	underline = true,
+	float = {
+		source = "always",
+		focusable = true,
+		-- border = "rounded",
+	},
+})
+
+require("e-kaput").setup({
+	-- defaults
+	enabled = false, -- true | false,  Enable EKaput.
+	transparency = 50, -- 0 - 100 , transparecy percentage.
+	borders = true, -- true | false, Borders.
+	-- error_sign = "", -- Error sign.
+	-- warning_sign = "", -- Warning sign.
+	-- information_sign = "", -- Information sign.
+	-- hint_sign = "", -- Hint sign.
+})
+-- vim.diagnostic.open_float({ scope = "cursor" })
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -24,6 +53,7 @@ local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- set keybinds
+	keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
 	keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
 	keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
@@ -114,11 +144,13 @@ local opts = {
 
 	tools = {
 		executor = require("rust-tools.executors").termopen,
+		reload_workspace_from_cargo_toml = true,
 		inlay_hints = {
 			auto = true,
+			only_current_line = true,
 			show_parameter_hints = true,
-			parameter_hints_prefix = "",
-			other_hints_prefix = "",
+			parameter_hints_prefix = "<- ",
+			other_hints_prefix = "-> ",
 		},
 	},
 

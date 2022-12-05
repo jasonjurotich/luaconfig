@@ -130,6 +130,11 @@ _G.packer_plugins = {
     path = "/Users/jj/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/lunarvim/darkplus.nvim"
   },
+  ["e-kaput.nvim"] = {
+    loaded = true,
+    path = "/Users/jj/.local/share/nvim/site/pack/packer/start/e-kaput.nvim",
+    url = "https://github.com/kaputi/e-kaput.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/jj/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -321,14 +326,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
 -- Config for: auto-save.nvim
 time([[Config for auto-save.nvim]], true)
 try_loadstring("\27LJ\2\n³\1\0\1\t\0\b\1\0246\1\0\0009\1\1\0016\2\2\0'\4\3\0B\2\2\0029\3\4\1\18\5\0\0'\6\5\0B\3\3\2\t\3\0\0X\3\v€9\3\6\0029\5\4\1\18\a\0\0'\b\a\0B\5\3\0024\6\0\0B\3\3\2\15\0\3\0X\4\2€+\3\2\0L\3\2\0+\3\1\0L\3\2\0\14&filetype\vnot_in\16&modifiable\14getbufvar\25auto-save.utils.data\frequire\afn\bvim\2”\1\1\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\14condition\0\19trigger_events\1\2\0\0\16InsertLeave\1\0\2\fenabled\2\22write_all_buffers\2\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
 time([[Config for auto-save.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
