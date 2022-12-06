@@ -16,6 +16,8 @@ if not typescript_setup then
 	return
 end
 
+vim.diagnostic.config({ virtual_text = false })
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -116,6 +118,7 @@ require("rust-tools").setup({
 	tools = {
 		executor = require("rust-tools.executors").termopen,
 		reload_workspace_from_cargo_toml = true,
+
 		inlay_hints = {
 			auto = true,
 			only_current_line = true,
