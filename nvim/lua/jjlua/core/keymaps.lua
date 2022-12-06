@@ -22,6 +22,8 @@ keymap.set("n", "<Tab>", ":bnext<CR>", opts)
 keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
 keymap.set("n", "bd", ":Bdelete<CR>")
 keymap.set("n", "gv", ":lua vim.lsp.buf.format()<CR>")
+keymap.set("n", "z", "<C-f>")
+keymap.set("n", "x", "<C-b>")
 
 keymap.set("n", "<S-Up>", ":resize -2<CR>", opts)
 keymap.set("n", "<S-Down>", ":resize +2<CR>", opts)
