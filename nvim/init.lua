@@ -35,3 +35,4 @@ require("indent_blankline").setup({
 
 vim.cmd([[inoremap ww println!("{:#?}",);<left><left>]])
 vim.cmd([[let g:python3_host_prog = '/opt/homebrew/bin/python3']])
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
