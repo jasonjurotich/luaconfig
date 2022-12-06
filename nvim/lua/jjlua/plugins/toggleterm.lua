@@ -13,7 +13,17 @@ toggleterm.setup({
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
-	direction = "vertical",
+	persist_mode = false,
 	close_on_exit = true,
+	direction = "vertical",
 	shell = vim.o.shell,
 })
+
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({ cmd = "spt", hidden = true, direction = "float" })
+
+function _SPOTIFY()
+	lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "sp", "<cmd>lua _SPOTIFY()<CR>", { noremap = true, silent = true })

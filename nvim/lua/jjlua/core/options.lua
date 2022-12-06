@@ -25,6 +25,7 @@ opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
+opt.fillchars = "eob: "
 
 -- this allows the dash to be part of a word like a normal letter
 opt.iskeyword:append("-")
